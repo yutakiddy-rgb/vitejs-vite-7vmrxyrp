@@ -140,14 +140,14 @@ export default function InputTab({
         </div>
   
         {/* 数量 */}
-        <div className="space-y-3">
+        <div className="space-y-3 mb-5">
           <label className="text-sm text-gray-600">数量</label>
           <input
             type="number"
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(Number(e.target.value))}
-            className="w-[calc(100%-13px)] border rounded-xl py-1 bg-gray-50 appearance-none"
+            className="mb-5 w-[calc(100%-13px)] border rounded-xl py-1 bg-gray-50 appearance-none"
           />
         </div>
   
@@ -171,7 +171,7 @@ export default function InputTab({
       </div>
   
       {/* 直近履歴 */}
-      <div className="bg-white rounded-2xl shadow p-4 border border-gray-100">
+      <div className="bg-white rounded-2xl shadow p-4">
         <h3 className="font-bold text-gray-700 mb-3">直近履歴</h3>
         <ul className="space-y-3">
           {recentLogs.map((l) => (
@@ -193,7 +193,7 @@ export default function InputTab({
       </div>
   
       {/* 月サマリー */}
-      <div className="bg-white rounded-2xl shadow p-4 border border-gray-100">
+      <div className="bg-white rounded-2xl shadow p-4">
         <h3 className="font-bold text-gray-700 mb-3">今月のサマリー</h3>
         <div className="space-y-1 text-sm">
           <p>購入箱数：{totalPlus}箱</p>
