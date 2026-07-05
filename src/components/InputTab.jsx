@@ -140,7 +140,7 @@ export default function InputTab({
         </div>
   
         {/* 数量 */}
-        <div className="space-y-3 mb-8">
+        <div className="space-y-3 !mb-10">
           <label className="text-sm text-gray-600">数量</label>
           <input
             type="number"
