@@ -135,7 +135,7 @@ export default function InputTab({
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-full border rounded-xl px-1 py-1 bg-gray-50 appearance-none"
+            className="w-full border rounded-xl py-1 bg-gray-50 appearance-none"
           />
         </div>
   
@@ -147,7 +147,7 @@ export default function InputTab({
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(Number(e.target.value))}
-            className="w-full border rounded-xl px-1 py-1 bg-gray-50 appearance-none"
+            className="w-full border rounded-xl py-1 bg-gray-50 appearance-none"
           />
         </div>
   
