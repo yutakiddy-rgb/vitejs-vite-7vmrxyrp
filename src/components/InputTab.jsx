@@ -147,15 +147,15 @@ export default function InputTab({
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(Number(e.target.value))}
-            className="w-[calc(100%-4px)] border rounded-xl py-1 bg-gray-50 appearance-none"
+            className="w-[calc(100%-12px)] border rounded-xl py-1 bg-gray-50 appearance-none"
           />
         </div>
   
         {/* ボタン */}
-        <div className="space-y-3 flex flex-row gap-3 w-full">
+        <div className="space-y-7 flex flex-row gap-3 w-full">
          <button
            onClick={handlePlus}
-          className="flex-1 bg-blue-500 text-white py-3 rounded-xl shadow active:scale-95 transition"
+          className="space-y-7 flex-1 bg-blue-500 text-white py-3 rounded-xl shadow active:scale-95 transition"
           >
           ＋{customAmount}箱購入
          </button>
