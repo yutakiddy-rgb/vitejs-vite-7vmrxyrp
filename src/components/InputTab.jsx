@@ -110,7 +110,7 @@ export default function InputTab({
     <div className="space-y-6">
   
       {/* 入力カード */}
-      <div className="bg-black rounded-2xl shadow-lg p-2 space-y-2 ">
+      <div className="bg-black rounded-2xl shadow-lg p-2 ">
   
         {/* 銘柄 */}
         <div className="space-y-1">
