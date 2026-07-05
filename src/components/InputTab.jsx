@@ -118,7 +118,7 @@ export default function InputTab({
           <select
             value={brandId}
             onChange={(e) => setBrandId(e.target.value)}
-            className="w-full border rounded-xl px-2 py-2 bg-gray-50"
+            className="w-full border rounded-xl px-2 py-2 bg-gray-50 "
           >
             {brandsMaster.map((b) => (
               <option key={b.id} value={b.id}>
@@ -135,7 +135,7 @@ export default function InputTab({
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-full border rounded-xl px-1 py-1 bg-gray-50"
+            className="w-full border rounded-xl px-1 py-1 bg-gray-50 appearance-none"
           />
         </div>
   
@@ -147,7 +147,7 @@ export default function InputTab({
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(Number(e.target.value))}
-            className="w-full border rounded-xl px-1 py-1 bg-gray-50"
+            className="w-full border rounded-xl px-1 py-1 bg-gray-50 appearance-none"
           />
         </div>
   
