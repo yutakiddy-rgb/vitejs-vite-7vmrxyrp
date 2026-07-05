@@ -135,7 +135,7 @@ export default function InputTab({
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-[calc(100%-4px)] border rounded-xl py-1 bg-gray-50 appearance-none"
+            className="w-[calc(100%-12px)] border rounded-xl py-1 bg-gray-50 appearance-none"
           />
         </div>
   
@@ -152,7 +152,7 @@ export default function InputTab({
         </div>
   
         {/* ボタン */}
-        <div className="space-y-7 flex flex-row gap-3 w-full">
+        <div className="mt-4 space-y-7 flex flex-row gap-3 w-full">
          <button
            onClick={handlePlus}
           className="space-y-7 flex-1 bg-blue-500 text-white py-3 rounded-xl shadow active:scale-95 transition"
