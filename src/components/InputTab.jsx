@@ -113,60 +113,59 @@ export default function InputTab({
       <div className="bg-black rounded-2xl shadow-lg p-2 ">
   
         {/* 銘柄 */}
-        <div className="space-y-1">
-          <label className="text-sm text-gray-600">銘柄</label>
+        <div className="space-y-2">
+         <label className="text-sm font-medium text-gray-700">銘柄</label>
           <select
             value={brandId}
-            onChange={(e) => setBrandId(e.target.value)}
-            className="w-full border rounded-xl px-2 py-2 bg-gray-50 "
+           onChange={(e) => setBrandId(e.target.value)}
+            className="w-full rounded-xl px-3 py-2 bg-gray-50 border border-gray-200 shadow-sm"
           >
-            {brandsMaster.map((b) => (
-              <option key={b.id} value={b.id}>
-                {b.name}
-              </option>
-            ))}
+         {brandsMaster.map((b) => (
+           <option key={b.id} value={b.id}>{b.name}</option>
+          ))}
           </select>
         </div>
   
         {/* 日付 */}
-        <div className="space-y-1">
-          <label className="text-sm text-gray-600">登録日付</label>
+        <div className="space-y-2">
+          <label className="text-sm font-medium text-gray-700">登録日付</label>
           <input
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-[calc(100%-12px)] border rounded-xl py-1 bg-gray-50 appearance-none"
+            className="w-full rounded-xl px-3 py-2 bg-gray-50 border border-gray-200 shadow-sm"
           />
         </div>
   
         {/* 数量 */}
-        <div className="space-y-3 mb-10">
-          <label className="text-sm text-gray-600">数量</label>
+        <div className="space-y-2 mb-6">
+          <label className="text-sm font-medium text-gray-700">数量</label>
           <input
             type="number"
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(Number(e.target.value))}
-            className="w-[calc(100%-13px)] rounded-xl py-1 bg-gray-50 appearance-none"
+            className="w-full rounded-xl px-3 py-2 bg-gray-50 border border-gray-200 shadow-sm"
           />
         </div>
   
         {/* ボタン */}
-        <div className="mt-4 flex flex-row gap-3 w-full">
-         <button
-           onClick={handlePlus}
-          className="flex-1 bg-blue-500 text-white py-3 rounded-xl shadow active:scale-95 transition"
-          >
+        <div className="flex gap-3">
+           <button
+              onClick={handlePlus}
+              className="flex-1 bg-blue-500 text-white py-4 rounded-xl shadow active:scale-95"
+           >
           ＋{customAmount}箱購入
-         </button>
+          </button>
 
-         <button
-            onClick={handleMinus}
-            className="flex-1 bg-red-500 text-white py-3 rounded-xl shadow active:scale-95 transition"
-          >
-          −{customAmount}箱消費
+           <button
+              onClick={handleMinus}
+              className="flex-1 bg-red-500 text-white py-4 rounded-xl shadow active:scale-95"
+            >
+            −{customAmount}箱消費
           </button>
         </div>
+
 
       </div>
   
