@@ -4,7 +4,7 @@ export function Button({ className, ...props }) {
   return (
     <button
       className={cn(
-        "px-4 py-2 rounded-md bg-neutral-900 text-white hover:bg-neutral-800",
+        "px-4 py-2 rounded-xl bg-blue-500 text-white font-medium shadow-sm active:scale-95 transition",
         className
       )}
       {...props}

@@ -1,10 +1,12 @@
-import { Tabs } from "./components/ui/tabs";
+import BottomTabBar from "./components/ui/BottomTabBar";
 import InputTab from "./components/InputTab";
 import RecordTab from "./components/RecordTab";
 import SettingsTab from "./components/SettingsTab";
 import { useState, useEffect } from "react";
 
 export default function App() {
+  const [activeTab, setActiveTab] = useState("input");
+
   const [logs, setLogs] = useState([]);
   const [dailySummary, setDailySummary] = useState({});
   const [brandsMaster, setBrandsMaster] = useState(() => {
@@ -53,43 +55,50 @@ export default function App() {
     localStorage.setItem("brandsMaster", JSON.stringify(brandsMaster));
   }, [brandsMaster]);
 
+  // 画面切り替え
+  const renderContent = () => {
+    switch (activeTab) {
+      case "input":
+        return (
+          <InputTab
+            logs={logs}
+            setLogs={setLogs}
+            dailySummary={dailySummary}
+            setDailySummary={setDailySummary}
+            brandsMaster={brandsMaster}
+          />
+        );
+      case "record":
+        return (
+          <RecordTab
+            dailySummary={dailySummary}
+            logs={logs}
+            brandsMaster={brandsMaster}
+          />
+        );
+      case "settings":
+        return (
+          <SettingsTab
+            brandsMaster={brandsMaster}
+            setBrandsMaster={setBrandsMaster}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="p-4 max-w-xl mx-auto">
-      <Tabs
-        tabs={[
-          {
-            label: "入力",
-            content: (
-              <InputTab
-                logs={logs}
-                setLogs={setLogs}
-                dailySummary={dailySummary}
-                setDailySummary={setDailySummary}
-                brandsMaster={brandsMaster}
-              />
-            )
-          },
-          {
-            label: "記録",
-            content: (
-              <RecordTab
-                dailySummary={dailySummary}
-                logs={logs}
-                brandsMaster={brandsMaster}
-              />
-            )
-          },
-          {
-            label: "設定",
-            content: (
-              <SettingsTab
-                brandsMaster={brandsMaster}
-                setBrandsMaster={setBrandsMaster}
-              />
-            )
-          }
-        ]}
-      />
+    <div className="min-h-screen w-full bg-gray-100">
+
+      {/* コンテンツ部分 */}
+      <div className="w-full max-w-[390px] mx-auto px-4 pb-24">
+        {renderContent()}
+      </div>
+
+      {/* 下タブバー（画面全体に固定） */}
+      <BottomTabBar activeTab={activeTab} onChange={setActiveTab} />
     </div>
   );
+  
 }
