@@ -26,7 +26,7 @@ export default function BottomTabBar({ activeTab, onChange }) {
             className={`
               flex flex-col items-center text-xs px-6 py-3 rounded-2xl transition-all
                 ${activeTab === t.id
-                  ? "bg-white shadow-[0_2px_6px_rgba(0,0,0,0.15)] text-blue-600 scale-105"
+                  ? "bg-white shadow-[0_6px_15px_rgba(0,0,0,0.15)] text-blue-600 scale-105"
                   : "text-gray-700 opacity-70"
                }
             `}
