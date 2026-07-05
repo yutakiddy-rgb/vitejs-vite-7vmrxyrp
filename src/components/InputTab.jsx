@@ -110,7 +110,7 @@ export default function InputTab({
     <div className="space-y-6">
   
       {/* 入力カード */}
-      <div className="bg-white rounded-2xl shadow-lg p-2 space-y-4 ">
+      <div className="bg-black rounded-2xl shadow-lg p-2 space-y-2 ">
   
         {/* 銘柄 */}
         <div className="space-y-1">
@@ -140,7 +140,7 @@ export default function InputTab({
         </div>
   
         {/* 数量 */}
-        <div className="space-y-3 mb-6">
+        <div className="space-y-3 mb-8">
           <label className="text-sm text-gray-600">数量</label>
           <input
             type="number"
