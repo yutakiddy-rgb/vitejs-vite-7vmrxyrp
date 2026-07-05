@@ -140,22 +140,22 @@ export default function InputTab({
         </div>
   
         {/* 数量 */}
-        <div className="space-y-3 mb-5">
+        <div className="space-y-3 mb-6">
           <label className="text-sm text-gray-600">数量</label>
           <input
             type="number"
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(Number(e.target.value))}
-            className="mb-5 w-[calc(100%-13px)] border rounded-xl py-1 bg-gray-50 appearance-none"
+            className="w-[calc(100%-13px)] rounded-xl py-1 bg-gray-50 appearance-none"
           />
         </div>
   
         {/* ボタン */}
-        <div className="mt-4 space-y-7 flex flex-row gap-3 w-full">
+        <div className="mt-4 flex flex-row gap-3 w-full">
          <button
            onClick={handlePlus}
-          className="space-y-7 flex-1 bg-blue-500 text-white py-3 rounded-xl shadow active:scale-95 transition"
+          className="flex-1 bg-blue-500 text-white py-3 rounded-xl shadow active:scale-95 transition"
           >
           ＋{customAmount}箱購入
          </button>
