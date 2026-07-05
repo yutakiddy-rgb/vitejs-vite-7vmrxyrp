@@ -110,7 +110,7 @@ export default function InputTab({
     <div className="space-y-6">
   
       {/* 入力カード */}
-      <div className="bg-white rounded-2xl shadow-lg p-4 space-y-5 border border-gray-100">
+      <div className="bg-white rounded-2xl shadow-lg p-2 space-y-4 border border-gray-100">
   
         {/* 銘柄 */}
         <div className="space-y-1">
@@ -135,7 +135,7 @@ export default function InputTab({
             type="date"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-full border rounded-xl px-2 py-2 bg-gray-50"
+            className="w-full border rounded-xl px-1 py-1 bg-gray-50"
           />
         </div>
   
@@ -147,7 +147,7 @@ export default function InputTab({
             min="1"
             value={customAmount}
             onChange={(e) => setCustomAmount(Number(e.target.value))}
-            className="w-full border rounded-xl px-2 py-2 bg-gray-50"
+            className="w-full border rounded-xl px-1 py-1 bg-gray-50"
           />
         </div>
   
