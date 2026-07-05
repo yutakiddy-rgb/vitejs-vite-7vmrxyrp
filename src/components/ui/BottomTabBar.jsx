@@ -16,7 +16,7 @@ export default function BottomTabBar({ activeTab, onChange }) {
       fixed bottom-0 left-0 w-full 
       bg-white/40 backdrop-blur-xl 
       border-t border-white/30 
-      shadow-[0_-4px_20px_rgba(0,0,0,0.12)]
+      shadow-[0_-6px_25px_rgba(0,0,0,0.18)]
     ">
       <div className="max-w-[390px] mx-auto flex justify-around py-3">
         {tabs.map((t) => (
@@ -24,11 +24,11 @@ export default function BottomTabBar({ activeTab, onChange }) {
             key={t.id}
             onClick={() => onChange(t.id)}
             className={`
-              flex flex-col items-center text-xs px-4 py-2 rounded-2xl transition-all
-              ${activeTab === t.id
-                ? "bg-white shadow-[0_6px_25px_rgba(0,0,0,0.18)] text-blue-600 scale-105"
-                : "text-gray-700 opacity-50"
-              }
+              flex flex-col items-center text-xs px-6 py-3 rounded-2xl transition-all
+                ${activeTab === t.id
+                  ? "bg-white shadow-[0_2px_6px_rgba(0,0,0,0.15)] text-blue-600 scale-105"
+                  : "text-gray-700 opacity-70"
+               }
             `}
           >
             <t.icon className="w-7 h-7 mb-1" />

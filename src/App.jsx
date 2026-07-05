@@ -89,7 +89,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-100">
+    <div className="min-h-screen w-full bg-black">
 
       {/* コンテンツ部分 */}
       <div className="w-full max-w-[390px] mx-auto px-4 pb-24">
