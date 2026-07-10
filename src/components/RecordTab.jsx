@@ -12,23 +12,25 @@ export default function RecordTab({ dailySummary, logs, brandsMaster }) {
     let totalPlus = 0;
     let totalMinus = 0;
     let totalPrice = 0;
-
+  
     logs.forEach((l) => {
       const d = new Date(l.date);
-      const now = new Date();
-
-      if (d.getFullYear() === now.getFullYear() && d.getMonth() === now.getMonth()) {
+  
+      // ★ 表示中の year / month を使う
+      if (d.getFullYear() === year && d.getMonth() === month) {
         if (l.type === "plus") {
           totalPlus += l.amount;
-          totalPrice += l.amount * l.priceAtThatTime; // ← 当時の価格
+          totalPrice += l.amount * l.priceAtThatTime;
         } else {
           totalMinus += l.amount;
         }
       }
     });
-
+  
     return { totalPlus, totalMinus, totalPrice };
   };
+  
+
   const { totalPlus, totalMinus, totalPrice } = getMonthSummary();
   
   // 月初の曜日（0=日, 1=月, ... 6=土）
@@ -149,13 +151,21 @@ export default function RecordTab({ dailySummary, logs, brandsMaster }) {
         })}
       </div>
       {/* 月サマリー */}
-       <div style={{ marginBottom: 20 }}>
-        <h3>今月のサマリー</h3>
-        <p>購入箱数：{totalPlus}箱</p>
-        <p>消費箱数：{totalMinus}箱</p>
-        <p>購入金額：{totalPrice.toLocaleString()}円</p>
-      </div>
+      <div className="
+        bg-white/40 
+        backdrop-blur-xl 
+        rounded-2xl 
+        shadow-[0_4px_20px_rgba(0,0,0,0.15)] 
+        p-5
+        ">
+        <h3 className="font-bold text-gray-800 mb-3">今月のサマリー</h3>
+        <div className="space-y-1 text-sm text-gray-800">
+          <p>購入箱数：{totalPlus}箱</p>
+          <p>消費箱数：{totalMinus}箱</p>
+          <p>購入金額：{totalPrice.toLocaleString()}円</p>
+        </div>
 
-    </div>
+      </div>
+      </div>
   );
 }
