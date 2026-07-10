@@ -89,8 +89,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-black">
-
+    <div className="min-h-screen w-full bg-gradient-to-b from-gray-200 to-gray-300">
       {/* コンテンツ部分 */}
       <div className="w-full max-w-[390px] mx-auto px-4 pb-24">
         {renderContent()}
